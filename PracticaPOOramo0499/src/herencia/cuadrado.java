@@ -18,6 +18,7 @@ public class cuadrado extends FiguraBidimencional {
 
     public double calcularPerimetro(double lado) {
         return lado + lado + lado + lado; 
+        
     }
             
         }

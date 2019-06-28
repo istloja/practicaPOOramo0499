@@ -15,8 +15,7 @@ public class ejecutar {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("ingrese 1 para circulo 2 para"
-                + "triangulo y 3 para cuadrado");
+        System.out.println("ingrese 1 para circulo 2 para triangulo y 3 para cuadrado");
         int valor = entrada.nextInt();
         switch (valor) {
             case 1:
@@ -27,20 +26,22 @@ public class ejecutar {
                 double perimetrocirculo = objeto.calcularPerimetro(radio);
                 System.out.println("este es el area: " + areacirculo + " y el perimetro es: " + perimetrocirculo);
                 break;//este va despues de case 
+
             case 2:
                 System.out.println("ingrese la base y la altura");
                 double base = entrada.nextDouble();
-                double altura=entrada.nextDouble();
+                double altura = entrada.nextDouble();
                 triangulo objeto1 = new triangulo();
-                double areatriangulo = objeto1.calcularArea(base,altura);
-                System.out.println("el area es: "+areatriangulo);
+                double areatriangulo = objeto1.calcularArea(base, altura);
+                System.out.println("el area es: " + areatriangulo);
                 System.out.println("ingrese los lados");
-                double lado1=entrada.nextDouble();
-                double lado2=entrada.nextDouble();
-                double lado3=entrada.nextDouble();
-                double perimetrotriangulo = objeto1.calcularPerimetro(lado1,lado2,lado3);
-                System.out.println("el perimetro es: "+ perimetrotriangulo);
+                double lado1 = entrada.nextDouble();
+                double lado2 = entrada.nextDouble();
+                double lado3 = entrada.nextDouble();
+                double perimetrotriangulo = objeto1.calcularPerimetro(lado1, lado2, lado3);
+                System.out.println("el perimetro es: " + perimetrotriangulo);
                 break;
+
             case 3:
                 System.out.println("ingrese el radio del  cuadrado");
                 double lado = entrada.nextDouble();

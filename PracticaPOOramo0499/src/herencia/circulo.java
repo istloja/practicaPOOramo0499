@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author ISTLOJA1
  */
-public class circulo extends figurabidimencional {
+public class circulo extends FiguraBidimencional {
 
     static double calcularArea(double radio) {
         return radio*Math.pow(Math.PI,2);

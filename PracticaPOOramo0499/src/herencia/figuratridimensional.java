@@ -9,6 +9,7 @@ package herencia;
  *
  * @author ISTLOJA1
  */
-class FiguraBidimencional extends figura{
+public class figuratridimensional  extends figura{
+     
     
 }

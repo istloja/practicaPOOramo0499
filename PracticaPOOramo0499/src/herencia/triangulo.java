@@ -11,7 +11,7 @@ package herencia;
  *
  * @author ISTLOJA1
  */
-public class triangulo extends figurabidimencional {
+public class triangulo extends FiguraBidimencional {
 
     static double calcularArea(double base, double altura) {
         return (base * altura) / 2;
