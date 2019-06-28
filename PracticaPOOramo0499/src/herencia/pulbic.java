@@ -9,6 +9,6 @@ package herencia;
  *
  * @author ISTLOJA1
  */
-public class figuradimensional extends figuradimencional {
+class pulbic {
     
 }

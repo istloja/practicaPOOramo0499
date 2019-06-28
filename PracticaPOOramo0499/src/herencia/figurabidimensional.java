@@ -9,7 +9,7 @@ package herencia;
  *
  * @author ISTLOJA1
  */
-public class tetraedro{
-    
+public class figurabidimensional {
+     
     
 }

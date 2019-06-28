@@ -5,20 +5,22 @@
  */
 package herencia;
 
-import java.util.Scanner;
+
 
 /**
  *
  * @author ISTLOJA1
  */
-public class circulo extends figurabidimencional {
+public class triangulo extends figurabidimencional {
 
-    static double calcularArea(double radio) {
-        return radio*Math.pow(Math.PI,2);
+    static double calcularArea(double base, double altura) {
+        return (base * altura) / 2;
     }
 
-    static double calcularPerimetro(double radio) {
+    static double calcularPerimetro(double lado1, double lado2, double lado3) {
         
-        return radio*(2*Math.PI);
+        return lado1+lado2+lado3;
     }
+
+   
 }

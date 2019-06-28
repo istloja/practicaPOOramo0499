@@ -9,6 +9,16 @@ package herencia;
  *
  * @author ISTLOJA1
  */
-public class cuadrado {
+public class cuadrado extends FiguraBidimencional {
+
+    public double calcularArea(double lado) {
+        return Math.pow(lado, 2);
+
+    }
+
+    public double calcularPerimetro(double lado) {
+        return lado + lado + lado + lado; 
+    }
+            
+        }
     
-}
