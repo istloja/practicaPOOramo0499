@@ -5,9 +5,13 @@
  */
 package archivos_serealizables;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import static java.util.Collections.list;
 import java.util.List;
 
 /**
@@ -21,21 +25,59 @@ public class Leeryescribrir {
             ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(direccion));
             escritor.writeObject(p1);
             escritor.close();
+
         } catch (Exception e) {
             System.out.println("se produjo un error" + e);
         }
     }
 
+    public Leeryescribrir() {
+    }
+
     public void leerArchivo(String direccion) {
         try {
-            ObjectOutputStream lector = new ObjectOutputStream(new FileOutputStream(direccion));
-            Object auxiliar = lector.getClass();
+            ObjectInputStream lector = new ObjectInputStream(new FileInputStream(direccion));
+            Object auxiliar = lector.readObject();
             Persona p1 = (Persona) auxiliar;//cambio de  objeto a persona 
             System.out.println(p1.getMascota().getNombre() + "su edad es:" + p1.getMascota().getEdad());
 
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public void leerLista(String url) {
+        try {
+            ObjectInputStream Lector = new ObjectInputStream(new FileInputStream(url));
+            Object auxiliar = Lector.readObject();
+            while (auxiliar != null) {
+                Persona p1 = (Persona) auxiliar;//cambio de objeto a perosna 
+                System.out.println(p1.getMascota().getNombre() + "su edad es:" + p1.getMascota().getEdad());
+                auxiliar = Lector.readObject();
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
+    public List<Persona> leerPersonas(String url) {
+        List<Persona> Lista = new ArrayList<>();
+        try {
+            ObjectInputStream lector = new ObjectInputStream(new FileInputStream(url));
+            Object auxiliar = lector.readObject();
+            while (auxiliar != null) {
+                Persona p1 = (Persona) auxiliar;
+                Lista.add(p1);
+                auxiliar = lector.readObject();
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
+        return Lista;
     }
 
     public void escribirlista(String direccion, List<Persona> Lista) {
@@ -64,12 +106,21 @@ public class Leeryescribrir {
         lista.add(p2);
         lista.add(p3);
         lista.add(p4);
-        objeto.escribirlista("/Users/ISTLOJA1/Desktop/ejemplo04.txt");
+        int a = lista.size();
+        System.out.println(a);
+        Iterable<Persona> Lista = null;
+//        for (Persona pers :Lista){
+//            System.out.println(pers.getNombre());
+        List<Persona> b = objeto.leerPersonas("\\Users\\ISTLOJA1\\Desktop\\ejemplo04.txt");
+        for (Persona persona : b) {
+            System.out.println(persona.getEdad());
+        }
+
+//        objeto.leerLista("\\Users\\ISTLOJA1\\Desktop\\ejemplo04.txt");
+//        }
+//        {  
+    }
+//        objeto.escribirLista("/Users/ISTLOJA1/Desktop/ejemplo04.txt", lista);
 
 //        objeto.escribirobjeto("/Users/ISTLOJA1/Desktop/ejemplo04.txt", p2)
-    }
-
-    private void escribirlista(String usersISTLOJA1Desktopejemplo04txt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
