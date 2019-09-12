@@ -25,7 +25,7 @@ class conexion_Basica {
             //ponemos las consultas 
             ResultSet result = variable.executeQuery("Select * from persona");
             while(result.next()) {
-                System.out.println(result.getString("nombre")+result.getString(""));
+                System.out.println(result.getString("nombre")+result.getString("apellido"));
             }
         } catch (Exception e) {
             System.out.println("se produjo un eror en" + e);
